@@ -1,0 +1,39 @@
+<div class="card-top container-fluid" style="position: relative; display: flex; flex-direction:column;
+min-width: 0; word-wrap: break-word; background-color: #fff; background-clip: border-box; border: 1px solid rgba(0,0,0,0.2);
+border-radius: .25rem;">
+    <div class="container d-flex">
+        <div class="item" style="margin: 0px 15px; text-align: center;">
+            <a (click)="filter('')">
+                <img style="width: 64px;" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item" style="margin: 0px 15px; text-align: center;">
+            <a (click)="filter('Electronic')">
+                <img style="width: 64px;" src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item" style="margin: 0px 15px; text-align: center;">
+           <a (click)="filter('Fashion')">
+            <img style="width: 64px;" src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+            <h6>Fashion</h6>
+           </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of products">
+            <div class="card col-md-3" style="transition: 0.3s ease-in-out; padding: 20px; margin: 50px;">
+                <img style="width: 200px; height: 200px; margin-bottom: 15px; transition: 0.3s ease-in-out;" src="{{item.imageUrl}}" alt="">
+                <h5>{{item.title}}</h5>
+                <p>{{item.description}}</p>
+                <p><strong>Price:</strong>{{item.price}}</p>
+                <button class="btn btn-primary">Add to card</button>
+            </div>
+        </ng-container>
+       
+    </div>
+</div>
